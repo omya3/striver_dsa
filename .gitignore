@@ -1,0 +1,51 @@
+# macOS
+.DS_Store
+
+# Build artifacts
+build/
+bin/
+dist/
+*.o
+*.obj
+*.so
+*.a
+*.dll
+*.exe
+*.out
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile.user
+
+# Debug bundles (macOS)
+*.dSYM/
+
+# Editor backups / swap
+*~
+*.swp
+*.swo
+
+# Logs and temp
+*.log
+*.tmp
+*.temp
+
+# VSCode - ignore everything by default, but allow some team-level files
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# If you prefer to keep those two but still ignore personal run/task configs:
+.vscode/launch.json
+.vscode/tasks.json
+
+# Optional: ignore compiled output if you build into source directories
+# (uncomment if you place executables next to .cpp files)
+# *.out
+# ${fileBasenameNoExtension}   # not literal; see note below
+
+# Other
+.idea/
+*.iml
