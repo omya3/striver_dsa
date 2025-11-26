@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "iostream": "cpp",
+        "vector": "cpp",
+        "unordered_map": "cpp",
+        "map": "cpp",
+        "set": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "unordered_set": "cpp",
+        "bitset": "cpp",
+        "__node_handle": "cpp"
+    }
+}
