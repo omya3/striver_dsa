@@ -6,35 +6,49 @@
 using namespace std;
 
 // --- Corrected lower_bound Function ---
-int lower_bound(const vector<int> &arr, int x) {
+int lower_bound(const vector<int> &arr, int x)
+{
     int low = 0;
     int high = arr.size() - 1;
     int ans = arr.size(); // FIX: Initialize ans to arr.size(). If x is not found, this is the correct return value.
 
-    while (low <= high) {
+    while (low <= high)
+    {
         int mid = low + (high - low) / 2; // FIX: Prevents potential integer overflow
-        if (arr[mid] >= x) {
+        if (arr[mid] == x)
+        {
             ans = mid;
             high = mid - 1; // Look for an earlier occurrence on the left side
-        } else {
+        }
+        else if (arr[mid] < x)
+        {
             low = mid + 1;
+        }
+        else
+        {
+            high = mid - 1; // Look for an earlier occurrence on the left side
         }
     }
     return ans;
 }
 
 // --- Corrected upper_bound Function ---
-int upper_bound(const vector<int> &arr, int x) {
+int upper_bound(const vector<int> &arr, int x)
+{
     int low = 0;
     int high = arr.size() - 1;
     int ans = arr.size(); // FIX: Initialize ans to arr.size().
 
-    while (low <= high) {
+    while (low <= high)
+    {
         int mid = low + (high - low) / 2; // FIX: Prevents potential integer overflow
-        if (arr[mid] > x) {
+        if (arr[mid] > x)
+        {
             ans = mid;
             high = mid - 1; // Look for an earlier occurrence on the left side
-        } else {
+        }
+        else
+        {
             low = mid + 1;
         }
     }
@@ -42,7 +56,8 @@ int upper_bound(const vector<int> &arr, int x) {
 }
 
 // --- Corrected main Function ---
-int main() { // FIX: main must return int
+int main()
+{ // FIX: main must return int
     int n;
     cout << "Enter the size of the array: ";
     cin >> n;
@@ -50,7 +65,8 @@ int main() { // FIX: main must return int
     // FIX: Properly initialize the vector and read elements into it
     vector<int> arr(n);
     cout << "Enter " << n << " sorted elements of the array: ";
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++)
+    {
         cin >> arr[i];
     }
 
@@ -63,13 +79,16 @@ int main() { // FIX: main must return int
 
     // FIX: Check for boundary conditions correctly before accessing the array
     // Check for boundary conditions before accessing the array
-    if (lb == arr.size() || arr[lb] != x) {
+    if (lb == arr.size() || arr[lb] != x)
+    {
         // Target not found
         return {-1, -1};
-    } else {
+    }
+    else
+    {
         // First occurrence is lb, last is ub - 1
         return {lb, ub - 1};
     }
-    
+
     return 0; // FIX: Return 0 to indicate successful execution
 }
