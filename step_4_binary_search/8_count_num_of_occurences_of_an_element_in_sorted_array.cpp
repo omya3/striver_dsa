@@ -10,19 +10,23 @@ int lower_bound(const vector<int> &arr, int x)
 {
     int low = 0;
     int high = arr.size() - 1;
-    int ans = arr.size(); // FIX: Initialize ans to arr.size(). If x is not found, this is the correct return value.
+    int ans = -1; // FIX: Initialize ans to arr.size(). If x is not found, this is the correct return value.
 
     while (low <= high)
     {
         int mid = low + (high - low) / 2; // FIX: Prevents potential integer overflow
-        if (arr[mid] >= x)
+        if (arr[mid] == x)
         {
             ans = mid;
             high = mid - 1; // Look for an earlier occurrence on the left side
         }
-        else
+        else if (arr[mid] < x)
         {
             low = mid + 1;
+        }
+        else
+        {
+            high = mid - 1; // Look for an earlier occurrence on the left side
         }
     }
     return ans;
@@ -33,19 +37,23 @@ int upper_bound(const vector<int> &arr, int x)
 {
     int low = 0;
     int high = arr.size() - 1;
-    int ans = arr.size(); // FIX: Initialize ans to arr.size().
+    int ans = -1; // FIX: Initialize ans to arr.size().
 
     while (low <= high)
     {
         int mid = low + (high - low) / 2; // FIX: Prevents potential integer overflow
-        if (arr[mid] > x)
+        if (arr[mid] == x)
         {
             ans = mid;
-            high = mid - 1; // Look for an earlier occurrence on the left side
+            low = mid + 1; // Look for an earlier occurrence on the left side
+        }
+        else if (arr[mid] < x)
+        {
+            low = mid + 1;
         }
         else
         {
-            low = mid + 1;
+            high = mid - 1;
         }
     }
     return ans;
@@ -75,15 +83,13 @@ int main()
 
     // FIX: Check for boundary conditions correctly before accessing the array
     // Check for boundary conditions before accessing the array
-    if (lb == arr.size() || arr[lb] != x)
+    if (lb == -1)
     {
-        // Target not found
-        return {-1, -1};
+        return 0;
     }
     else
     {
-        // First occurrence is lb, last is ub - 1
-        return {lb, ub - 1};
+        return ub - lb + 1;
     }
 
     return 0; // FIX: Return 0 to indicate successful execution
