@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int search_element(vector<int> &arr, int target)
+bool search_element(vector<int> &arr, int target)
 {
     int low = 0;
     int high = arr.size() - 1;
@@ -13,7 +13,13 @@ int search_element(vector<int> &arr, int target)
 
         if (arr[mid] == target)
         {
-            return mid;
+            return true;
+        }
+
+        if (arr[mid] == arr[low] && arr[mid] == arr[high])
+        {
+            low++;
+            high--;
         }
 
         if (arr[low] <= arr[mid])
@@ -39,11 +45,12 @@ int search_element(vector<int> &arr, int target)
             }
         }
     }
-    return -1;
+    return false;
 }
 
 int main()
 {
+
     int n;
     cout << "Enter the size of the array" << endl;
     cin >> n;
@@ -61,4 +68,5 @@ int main()
     cin >> target;
 
     search_element(arr, target);
+
 }
