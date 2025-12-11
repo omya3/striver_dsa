@@ -1,19 +1,25 @@
 #include <iostream>
 using namespace std;
 
-bool search_element(vector<int> &arr, int target)
+bool search_min_element(vector<int> &arr)
 {
     int low = 0;
     int high = arr.size() - 1;
     int mid;
+    int global_min = INT_MAX;
+
+    if (arr[low] <= arr[high])
+    {
+        return arr[low];
+    }
 
     while (low <= high)
     {
         mid = low + (high - low) / 2;
 
-        if (arr[mid] == target)
+        if (mid == low && mid == high)
         {
-            return true;
+            return min(arr[mid], global_min);
         }
 
         if (arr[mid] == arr[low] && arr[mid] == arr[high])
@@ -25,28 +31,16 @@ bool search_element(vector<int> &arr, int target)
 
         if (arr[low] <= arr[mid])
         {
-            if (arr[low] <= target && target <= arr[mid])
-            {
-                high = mid - 1;
-            }
-            else
-            {
-                low = mid + 1;
-            }
+            global_min = min(global_min, arr[low]);
+            low = mid + 1;
         }
         else
         {
-            if (arr[mid] <= target && target <= arr[high])
-            {
-                low = mid + 1;
-            }
-            else
-            {
-                high = mid - 1;
-            }
+            global_min = min(global_min, arr[mid]);
+            high = mid - 1;
         }
     }
-    return false;
+    return global_min;
 }
 
 int main()
@@ -68,6 +62,5 @@ int main()
     cout << "Enter the target element" << endl;
     cin >> target;
 
-    search_element(arr, target);
-
+    search_min_element(arr);
 }
