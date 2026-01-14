@@ -57,7 +57,7 @@ int find_the_peak(vector<int> &arr)
 int main()
 {
 
-    int n;
+   int n;
     cout << "Enter the size of the array" << endl;
     cin >> n;
 
@@ -69,7 +69,7 @@ int main()
         cin >> arr[i];
     }
 
-    int target;
+    int  target;
     cout << "Enter the target element" << endl;
     cin >> target;
 
