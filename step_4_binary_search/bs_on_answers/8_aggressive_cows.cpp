@@ -32,7 +32,15 @@ int find_min_dist_which_is_max(vector<int> &arr, int cows)
 
         int mid = left + (right - left) / 2;
         if (check_if_arrangement_possible(arr, mid, cows))
+        {
+            left = mid + 1;
+        }
+        else
+        {
+            right = mid - 1;
+        }
     }
+    return right;
 }
 
 int main()
