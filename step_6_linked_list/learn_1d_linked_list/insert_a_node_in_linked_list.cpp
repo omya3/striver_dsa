@@ -71,7 +71,7 @@ Node *insert_a_node_at_k(int data, int k, Node *head)
         return head;
     }
 
-    Node *new_node = new Node(data);
+    Node *new_node = new Node(data, nullptr);
     new_node->next = temp->next;
     temp->next = new_node;
 
@@ -80,7 +80,7 @@ Node *insert_a_node_at_k(int data, int k, Node *head)
 
 Node *insert_a_node_befor_x(int data, int x, Node *head)
 {
-    Node *new_node = new Node(data);
+    Node *new_node = new Node(data, nullptr);
 
     // Case 1: Insert before head (if head->data == x)
     if (head != nullptr && head->data == x)
