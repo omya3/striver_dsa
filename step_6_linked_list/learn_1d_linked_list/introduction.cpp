@@ -22,7 +22,7 @@ Node *convert_array_to_ll(vector<int> &arr)
     Node *head = new_node;
     for (int i = 1; i < arr.size(); i++)
     {
-        Node *temp = new Node(arr[0], nullptr);
+        Node *temp = new Node(arr[i], nullptr);
         new_node->next = temp;
         new_node = temp;
     }

@@ -68,6 +68,28 @@ Node *insert_befor_tail_of_dll(Node *head)
     return head;
 }
 
+Node *insert_befor_kth_element_of_dll(Node *head, int k, int val)
+{
+
+    if (k == 1)
+        return insert_before_head_of_dll(head, val);
+
+    Node *temp = head;
+    int cnt = 0;
+    while (temp != NULL)
+    {
+        cnt++;
+        if (cnt == k)
+            break;
+        temp = temp->next;
+    }
+    Node *prev = temp->back;
+    Node *newNode = new Node(val, temp, prev);
+    prev->next = newNode;
+    temp->back = newNode;
+    return head;
+}
+
 Node *delete_head_of_dll(Node *head)
 {
     if (head == NULL || head->next == NULL)
