@@ -17,7 +17,7 @@ public:
 
 Node *add_two_numbers(Node *ll1, Node *ll2)
 {
-    Node *dummy_node = new Node(-1);
+    Node *dummy_node = new Node(-1, nullptr);
     Node *curr = dummy_node;
 
     Node *t1 = ll1;
