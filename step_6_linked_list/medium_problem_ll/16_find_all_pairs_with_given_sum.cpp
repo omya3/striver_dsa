@@ -25,7 +25,7 @@ Node *find_tail(Node *head)
     return tail;
 }
 
-vector<pair<int, int>> find_pairs(Node *head, int k)
+vector<pair<int, int>> find_pairs(Node *head, int target)
 {
     vector<pair<int, int>> ans;
     if (head == NULL)
