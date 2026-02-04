@@ -35,7 +35,6 @@ int find_lonest_subarray_with_sum_k(int arr[], int n, int k)
     }
     return max_len;
 }
-}
 
 int main()
 {
