@@ -1,3 +1,6 @@
+#include <iostream>
+using namespace std;
+
 void fin_all_combs(int i, int n, vector<int> arr, int target, vector<int> ds, vector<vector<int>> &result)
 {
     if (i == n)
@@ -15,13 +18,15 @@ void fin_all_combs(int i, int n, vector<int> arr, int target, vector<int> ds, ve
         fin_all_combs(i, n, arr, target - arr[i], ds, result);
         ds.pop_back();
     }
-    
+
     fin_all_combs(i + 1, n, arr, target, ds, result);
 }
 
-class Solution {
+class Solution
+{
 public:
-    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+    vector<vector<int>> combinationSum(vector<int> &candidates, int target)
+    {
         vector<int> ds;
         vector<vector<int>> result;
         fin_all_combs(0, candidates.size(), candidates, target, ds, result);
