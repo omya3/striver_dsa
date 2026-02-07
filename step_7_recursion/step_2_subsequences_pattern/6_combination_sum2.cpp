@@ -1,3 +1,5 @@
+#include <iostream>
+using namespace std;
 void find_all_combs(int ind, int n, vector<int> candidates, int target, vector<int> &ds, vector<vector<int>> &result)
 {
     if (target == 0)
@@ -17,9 +19,11 @@ void find_all_combs(int ind, int n, vector<int> candidates, int target, vector<i
     }
 }
 
-class Solution {
+class Solution
+{
 public:
-    vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
+    vector<vector<int>> combinationSum2(vector<int> &candidates, int target)
+    {
         vector<int> ds;
         vector<vector<int>> result;
         sort(candidates.begin(), candidates.end());
