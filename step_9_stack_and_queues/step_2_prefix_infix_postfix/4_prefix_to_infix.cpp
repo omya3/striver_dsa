@@ -1,11 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-string postfix_to_infix(string s)
+string prefix_to_infix(string s)
 {
-    int i = 0;
+    int i = s.size() - 1;
     stack<string> st;
-    while (i < (int)s.size())
+    while (i >= 0)
     {
         char ch = s[i];
         if ((ch >= 'A' && ch <= 'Z') ||
@@ -16,19 +16,17 @@ string postfix_to_infix(string s)
         }
         else
         {
-            string t1 = st.top();
-            st.pop();
-            string t2 = st.top();
-            st.pop();
-            st.push("(" + t2 + ch + t1 + ")");
+            string t1 = st.top(); st.pop(); // left operand
+            string t2 = st.top(); st.pop(); // right operand
+            st.push("(" + t1 + ch + t2 + ")");
         }
-        i++;
+        i--;
     }
     return st.top();
 }
 
 int main()
 {
-    string post = "AB+C*";
-    cout << postfix_to_infix(post) << endl; // ((A+B)*C)
+    string pre = "*+ABC";
+    cout << prefix_to_infix(pre) << endl; // ((A+B)*C)
 }
