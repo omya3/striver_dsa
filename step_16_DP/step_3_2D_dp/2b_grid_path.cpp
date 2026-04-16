@@ -13,7 +13,7 @@ public:
             for (int j = 0; j < n; j++)
             {
                 if (i == 0 && j == 0)
-                    dp[i][j] = 0;
+                    dp[i][j] = 1;
                 else
                 {
                     int up = 0;
