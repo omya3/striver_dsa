@@ -4,10 +4,15 @@ class Solution
 public:
     int maxProfit(int k, vector<int> &prices)
     {
+
+        // DP Table Dimensions: [n + 1][2][k + 1]
+        // Why prices.size() + 1? 
+        // 1. Prevents "Out of Bounds" errors when day 'ind' looks ahead to day 'ind + 1'.
+        // 2. Index 'n' represents a hypothetical day AFTER trading ends, serving as our base case (0 profit).
         vector<vector<vector<long>>> dp(prices.size()+1,
                                         vector<vector<long>>(2,
                                                              vector<long>(k+1, 0)));
-
+    
         int n = prices.size();
 
         for (int ind = 0; ind < n; ind++)
