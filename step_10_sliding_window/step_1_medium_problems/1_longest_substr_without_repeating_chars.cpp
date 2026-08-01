@@ -37,3 +37,50 @@ public:
         return maxLen;
     }
 };
+
+// one more below solution
+
+class Solution
+{
+public:
+    int longestUniqueSubstr(string &s)
+    {
+        int left = 0;
+        int n = s.size();
+
+        map<char, int> charMap;
+        int curr_len = 0;
+        int max_len = 0; // fixed: was INT_MIN, now handles empty string correctly
+
+        for (int right = 0; right < n; right++)
+        {
+
+            charMap[s[right]] += 1;
+
+            curr_len = right - left + 1;
+            if (curr_len != (int)charMap.size())
+            {
+                if (charMap[s[left]] == 1)
+                {
+                    charMap[s[left]] -= 1;
+                    charMap.erase(s[left]);
+                    left++;
+                    curr_len = right - left + 1;
+                }
+                else
+                {
+                    charMap[s[left]] -= 1;
+                    left++;
+                    curr_len = right - left + 1;
+                }
+            }
+
+            if (curr_len == (int)charMap.size())
+            {
+                max_len = max(max_len, curr_len);
+            }
+        }
+
+        return max_len;
+    }
+};

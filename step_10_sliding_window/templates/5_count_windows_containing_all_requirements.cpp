@@ -1,7 +1,7 @@
+// method 1
 
-int longest_sl_wind(vector<int> &arr)
+long long countContainingRequirements(vector<int> &arr)
 {
-    int n = arr.size();
     int left = 0;
     int answer = 0;
 
@@ -9,23 +9,19 @@ int longest_sl_wind(vector<int> &arr)
     {
         add(arr[right]);
 
-        while (!valid())
+        while (valid())
         {
-            remove(arr[left]);
+            answer += (n - right);
+            remove(left);
             left++;
         }
-
-        answer = max(answer, right - left + 1);
     }
-
     return answer;
 }
 
-// foll is optimised version
-
-int longest_sl_wind(vector<int> &arr)
+// method 2
+long long countContainingRequirements(vector<int> &arr)
 {
-    int n = arr.size();
     int left = 0;
     int answer = 0;
 
@@ -33,14 +29,15 @@ int longest_sl_wind(vector<int> &arr)
     {
         add(arr[right]);
 
-        if (!valid())
+        while (valid())
         {
-            remove(arr[left]);
+
+            remove(left);
             left++;
         }
-
-        answer = max(answer, right - left + 1);
+        answer += left;
     }
-
     return answer;
 }
+
+// 
