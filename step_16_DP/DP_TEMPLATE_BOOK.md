@@ -349,6 +349,20 @@ int cutRod(vector<int>& price, int n) {
 
 - Iterating backward and accidentally turning it into 0/1 knapsack.
 - Not allowing the `take` transition to remain on the same item.
+- Comparing the item index with the piece length. In the recursive form,
+  `pieceLength = ind + 1`, and the fit check must compare the piece length with
+  the remaining rod capacity:
+
+~~~cpp
+int pieceLength = ind + 1;
+if (pieceLength <= remainingLength) {
+    take = price[ind] + solve(ind, remainingLength - pieceLength, price, dp);
+}
+~~~
+
+The units should match: compare **length with remaining length**, never index
+with length. Keep `ind` unchanged after taking because the same cut length can
+be used again.
 
 ### Representative problems
 
