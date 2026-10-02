@@ -1,6 +1,6 @@
 # Striver Graph Revision Tracker
 
-Last reconciled with the redesigned TakeUForward A2Z sheet: **21 September 2026**.
+Last reconciled with the local repository and reported solves: **23 September 2026**.
 
 Official sheet: <https://takeuforward.org/prep-hub/strivers-a2z-dsa-sheet>
 
@@ -26,7 +26,7 @@ The redesigned site reports **47 graph problems**. Its currently visible learnin
 | 8 | Rotten Oranges | DONE | [`3_rotten_oranges.cpp`](step_2_problems_on_bfs_dfs/3_rotten_oranges.cpp) |
 | 9 | Distance of Nearest Cell Having One | REVIEW | [`7_dist_nearest_neigh_0.cpp`](step_2_problems_on_bfs_dfs/7_dist_nearest_neigh_0.cpp) finds nearest zero. Same multi-source BFS pattern, but reverse the source value for the current prompt. |
 | 10 | Surrounded Regions | DONE | [`8_surrounded_regions.cpp`](step_2_problems_on_bfs_dfs/8_surrounded_regions.cpp) |
-| 11 | Number of Distinct Islands | PENDING | No matching local solution found. |
+| 11 | Number of Distinct Islands | DONE | [`16_num_distinct_islands.cpp`](step_2_problems_on_bfs_dfs/16_num_distinct_islands.cpp) |
 | 12 | Detect a Cycle in an Undirected Graph | DONE | [`5_cycle_detection_bfs.cpp`](step_2_problems_on_bfs_dfs/5_cycle_detection_bfs.cpp), [`6_cycle_detection_dfs.cpp`](step_2_problems_on_bfs_dfs/6_cycle_detection_dfs.cpp) |
 | 13 | Bipartite Graph | DONE | [`13_bipartite_graph.cpp`](step_2_problems_on_bfs_dfs/13_bipartite_graph.cpp) |
 | 14 | Topological Sort / Kahn's Algorithm | DONE | [`1_topo_sort.cpp`](step_3_topo_sort_and_problems/1_topo_sort.cpp), [`2_topo_sort_using_kahns_algo.cpp`](step_3_topo_sort_and_problems/2_topo_sort_using_kahns_algo.cpp) |
@@ -38,7 +38,7 @@ The redesigned site reports **47 graph problems**. Its currently visible learnin
 | 20 | Shortest Path in DAG | DONE | [`2_shortest_path_in_DAG.cpp`](step_4_shortest_path_algos_and_problems/2_shortest_path_in_DAG.cpp) |
 | 21 | Shortest Path in Undirected Graph with Unit Weights | DONE | [`1_shortest_path_undirected_graph.cpp`](step_4_shortest_path_algos_and_problems/1_shortest_path_undirected_graph.cpp) |
 | 22 | Word Ladder I | DONE | [`10_word_ladder_1.cpp`](step_2_problems_on_bfs_dfs/10_word_ladder_1.cpp) |
-| 23 | Word Ladder II | PENDING | No matching local solution found. |
+| 23 | Word Ladder II | DONE | [`11_world_ladder_2.cpp`](step_2_problems_on_bfs_dfs/11_world_ladder_2.cpp) |
 | 24 | Dijkstra's Algorithm | DONE | [`3_dijkstra_with_min_heap.cpp`](step_4_shortest_path_algos_and_problems/3_dijkstra_with_min_heap.cpp), [`4_dijkstra_a_using_set.cpp`](step_4_shortest_path_algos_and_problems/4_dijkstra_a_using_set.cpp) |
 | 25 | Print Shortest Path | DONE | [`4_dijkstra_print_shortest_path.cpp`](step_4_shortest_path_algos_and_problems/4_dijkstra_print_shortest_path.cpp) |
 | 26 | Shortest Distance in a Binary Maze | REVIEW | [`5_shortest_path_bin_matrix.cpp`](step_4_shortest_path_algos_and_problems/5_shortest_path_bin_matrix.cpp) is the 8-direction binary-matrix variant. Re-solve the current prompt if it uses source/destination and four directions. |
@@ -46,7 +46,7 @@ The redesigned site reports **47 graph problems**. Its currently visible learnin
 | 28 | Cheapest Flight Within K Stops | DONE | [`7_checpest_flights_within_k_stops.cpp`](step_4_shortest_path_algos_and_problems/7_checpest_flights_within_k_stops.cpp) |
 | 29 | Minimum Multiplications to Reach End | DONE | [`10_min_steps_for_multiplication.cpp`](step_4_shortest_path_algos_and_problems/10_min_steps_for_multiplication.cpp) |
 | 30 | Number of Ways to Arrive at Destination | DONE | [`9_no_of_ways_to_reach_dest.cpp`](step_4_shortest_path_algos_and_problems/9_no_of_ways_to_reach_dest.cpp) |
-| 31 | Bellman-Ford Algorithm | PENDING | No matching local solution found. |
+| 31 | Bellman-Ford Algorithm | DONE | Solved on 22 September; reusable skeleton saved in [`GRAPH_TEMPLATE_BOOK.md`](Template_practise/GRAPH_TEMPLATE_BOOK.md). |
 | 32 | Floyd-Warshall Algorithm | DONE | Floyd-Warshall is implemented inside [`11_find_city_with_smallest_no_of_neighbours.cpp`](step_4_shortest_path_algos_and_problems/11_find_city_with_smallest_no_of_neighbours.cpp); add a standalone template during revision. |
 | 33 | Find the City with Smallest Number of Neighbors | DONE | [`11_find_city_with_smallest_no_of_neighbours.cpp`](step_4_shortest_path_algos_and_problems/11_find_city_with_smallest_no_of_neighbours.cpp) |
 | 34 | MST Theory | DONE | Prim and Kruskal implementations exist; revise cut property and why a greedy edge is safe. |
@@ -57,8 +57,8 @@ The redesigned site reports **47 graph problems**. Its currently visible learnin
 | 39 | Number of Islands II | DONE | [`8_num_islands_2.cpp`](step_5_MST/8_num_islands_2.cpp) |
 | 40 | Making a Large Island | DONE | [`9_making_large_island.cpp`](step_5_MST/9_making_large_island.cpp) |
 | 41 | Most Stones Removed with Same Row or Column | DONE | [`6_most_stones_removed.cpp`](step_5_MST/6_most_stones_removed.cpp) |
-| 42 | Kosaraju's Algorithm | PENDING | No matching local solution found. |
-| 43 | Bridges in Graph | PENDING | No matching local solution found. |
+| 42 | Kosaraju's Algorithm | PENDING | Tarjan SCC is present locally, but it is a different SCC algorithm. |
+| 43 | Bridges in Graph | DONE | Solved through Critical Connections in a Network; compiled template in [`8_bridges_tarjan.cpp`](Template_practise/8_bridges_tarjan.cpp). |
 | 44 | Articulation Point in Graph | PENDING | No matching local solution found. |
 
 ## What remains
@@ -66,12 +66,8 @@ The redesigned site reports **47 graph problems**. Its currently visible learnin
 ### Definitely pending — solve these
 
 1. Connected Components
-2. Number of Distinct Islands
-3. Word Ladder II
-4. Bellman-Ford Algorithm
-5. Kosaraju's Algorithm
-6. Bridges in Graph
-7. Articulation Point in Graph
+2. Kosaraju's Algorithm
+3. Articulation Point in Graph
 
 ### Re-solve the current variant
 

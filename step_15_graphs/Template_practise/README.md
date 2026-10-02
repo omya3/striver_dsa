@@ -2,6 +2,13 @@
 
 This folder is the quick-recall template pack. Type a template from memory before looking at its saved version.
 
+## Master template book
+
+Use [`GRAPH_TEMPLATE_BOOK.md`](GRAPH_TEMPLATE_BOOK.md) for revision. It maps
+every graph problem completed so far to a reusable pattern and keeps the
+recognition clue, invariant, skeleton, complexity, bugs and representative
+problems together.
+
 ## Templates already present
 
 | Pattern | File |
@@ -13,21 +20,15 @@ This folder is the quick-recall template pack. Type a template from memory befor
 | Topological sort with Kahn's algorithm | [`5_topo_sort_using_kahns_algo.cpp`](5_topo_sort_using_kahns_algo.cpp) |
 | Cycle detection with DFS | [`6_detect_cycle_using_dfs.cpp`](6_detect_cycle_using_dfs.cpp) |
 | Dijkstra using `set` | [`7_dijkstras_using_set.cpp`](7_dijkstras_using_set.cpp) |
+| Tarjan bridges with edge IDs | [`8_bridges_tarjan.cpp`](8_bridges_tarjan.cpp) |
 
-## Important templates still to add
+## Important templates still to add after solving
 
-Add these only after writing and testing the corresponding problem during revision:
+The master book now covers the completed patterns. These remain intentionally
+outside the completed set until their corresponding problems are solved and tested:
 
-1. Grid BFS/DFS with direction arrays
-2. Undirected cycle detection with BFS
-3. Directed cycle detection with DFS state and with Kahn's algorithm
-4. Dijkstra using a min-heap and parent reconstruction
-5. Bellman-Ford
-6. Floyd-Warshall
-7. Disjoint Set Union with path compression and union by size
-8. Prim and Kruskal
-9. Kosaraju
-10. Bridges and articulation points using discovery/low time
+1. Kosaraju's algorithm
+2. Articulation points
 
 ## Recall checklist
 

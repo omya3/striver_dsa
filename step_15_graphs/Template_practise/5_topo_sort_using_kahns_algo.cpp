@@ -48,7 +48,7 @@ vector<int> topo_sort_kahn(vector<vector<int>> &adj)
 
     // 4. Cycle Detection Check
     // FIX 3: If we didn't process all nodes, a cycle must exist!
-    if (toposort.size() != n)
+    if ((int)toposort.size() != n)
     {
         return {}; // Return empty vector to signal invalid topological order
     }
